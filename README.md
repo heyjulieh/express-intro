@@ -179,22 +179,22 @@ We're making a weird app. Albums and taquerias.  Treat your senses.
 
 1. Add some taqueria seed data to your server file.
 
-  ```js
-    // server.js
-    var taquerias = [
-      { name: "La Taqueria" },
-      { name: "El Farolito" },
-      { name: "Taqueria Cancun" }
-    ];
-  ```
+    ```js
+      // server.js
+      var taquerias = [
+        { name: "La Taqueria" },
+        { name: "El Farolito" },
+        { name: "Taqueria Cancun" }
+      ];
+    ```
 
 1. Add a route to your server side javascript that clients can use to get taqueria data.  The route's path should be `/api/taquerias`.  Instead of `res.send` (for simple strings) or `res.sendFile`, this route will use `res.json`.
 
-  ```js
-    app.get('/api/taquerias', function (req, res) {
-      res.json(taquerias);
-    });
-  ```
+    ```js
+      app.get('/api/taquerias', function (req, res) {
+        res.json(taquerias);
+      });
+    ```
 
 1. Navigate to http://localhost:3000/api/taquerias (remember to restart your server first!) and check that the data is showing up.
 
@@ -204,16 +204,16 @@ We're making a weird app. Albums and taquerias.  Treat your senses.
     <summary> Want a reminder of the ajax call structure? Click here!</summary>
 
 
-    ```javascript
-    $.ajax({
-      method: 'GET',
-      url: '/api/taquerias',
-      success: handleResponse
-    });
+    ```js
+      $.ajax({
+        method: 'GET',
+        url: '/api/taquerias',
+        success: handleResponse
+      });
 
-    function handleResponse(json) {
-      // your code here
-    }
+      function handleResponse(json) {
+        // your code here
+      }
     ```
 
   </details>
