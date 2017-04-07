@@ -200,8 +200,9 @@ We're making a weird app. Albums and taquerias.  Treat your senses.
 
 1. In your `app.js` file, write a jQuery ajax request to get the taqueria data. When the response comes back, display all the taqueria names above the albums on your site's root page (localhost:3000/).  
 
-  <details><summary> Want a reminder of the ajax call structure? Click here!</summary>
-  <p>
+  <details>
+    <summary> Want a reminder of the ajax call structure? Click here!</summary>
+
 
     ```javascript
     $.ajax({
@@ -215,12 +216,11 @@ We're making a weird app. Albums and taquerias.  Treat your senses.
     }
     ```
 
-  </p>
   </details>
 
 ### Stretch Challenges
 
-2. Add a `vendor` folder to your project. The `vendor` folder is traditionally used for third-party (external) library code.  Download Bootstrap's CSS and JavaScript files and add them to the `vendor` folder. Can you include Bootstrap in your project from this location instead of the CDN? What is the benefit of having a separate `vendor` folder for external front-end libraries?
+1. Add a `vendor` folder to your project. The `vendor` folder is traditionally used for third-party (external) library code.  Download Bootstrap's CSS and JavaScript files and add them to the `vendor` folder. Can you include Bootstrap in your project from this location instead of the CDN? What is the benefit of having a separate `vendor` folder for external front-end libraries?
 
   > **Hint**: Remember to serve the static vendor files to make them available to your front end.
 
@@ -229,4 +229,4 @@ We're making a weird app. Albums and taquerias.  Treat your senses.
     app.use(express.static('vendor'));
   ```
 
-3. Add an image to your `public/images` folder and display it in `index.html`.
+2. Add an image to your `public/images` folder and display it in `index.html`.
