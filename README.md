@@ -58,14 +58,14 @@ Solution in the solution branch.
     });
   ```
 
-1. Add a comment above each line of code saying what each line does.
+2. Add a comment above each line of code saying what each line does.
 
   > **Hint**: Reference [the express documentation](http://expressjs.com/en/4x/api.html#app).
   > **Hint**: `process.env.PORT || 3000` means "in production use the production port, otherwise use 3000 (for development)".
 
-1. Run `node server.js` in the Terminal. You should see 'Example app listening at http://localhost:3000/' _in the Terminal_.  When we're using express, this is where our server-side console logs show up!  Also, visit `http://localhost:3000/` in your browser. You should see "Hello World!"  The browser console only shows client-side console outputs. **Every time you make a change in your server code and want it to run, you need to end the previous server and run `node server.js`**.
+3. Run `node server.js` in the Terminal. You should see 'Example app listening at http://localhost:3000/' _in the Terminal_.  When we're using express, this is where our server-side console logs show up!  Also, visit `http://localhost:3000/` in your browser. You should see "Hello World!"  The browser console only shows client-side console outputs. **Every time you make a change in your server code and want it to run, you need to end the previous server and run `node server.js`**.
 
-1. Console log the `req` (request) and the `res` (response) objects inside your server code's `app.get` method for the `/` path. (The `/` path is often called the "root" path.) Restart the server and briefly check out what the `req` and `res` are.
+4. Console log the `req` (request) and the `res` (response) objects inside your server code's `app.get` method for the `/` path. (The `/` path is often called the "root" path.) Restart the server and briefly check out what the `req` and `res` are.
 
 
 **Add Some Data on the Server**
@@ -90,7 +90,7 @@ Solution in the solution branch.
     ];
   ```
 
-1.  To have this data be accessible, we'll need to set up a route to serve it. Add an `app.get` method for the path `/api/albums`.  Inside the new route, use `res.json(albums)` to respond with some JSON containing all the albums from our albums variable.
+2.  To have this data be accessible, we'll need to set up a route to serve it. Add an `app.get` method for the path `/api/albums`.  Inside the new route, use `res.json(albums)` to respond with some JSON containing all the albums from our albums variable.
 
   > Restart your server, and you should see our albums when you use postman to request the `http://localhost:3000/api/albums` URL.  You could also try using curl: `curl -X GET http://localhost:3000/api/albums` or just your browser.
 
@@ -122,7 +122,7 @@ Solution in the solution branch.
   ```
   Dig into those and see what they look like.
 
-3. Next edit `app.js` to run the same ajax call as above and console log the data.  Remember to put your ajax call inside the handler for the document ready event: `$(document).ready(function() {})`. Consider moving the success handling function definition outside the ajax call, since it's about to get more complicated!
+2. Next edit `app.js` to run the same ajax call as above and console log the data.  Remember to put your ajax call inside the handler for the document ready event: `$(document).ready(function() {})`. Consider moving the success handling function definition outside the ajax call, since it's about to get more complicated!
 
 3. Once you have that, edit `app.js` to display this data on your `index.html` page using jQuery.  Decide how you want it to look.  **Hint:** You might also find it useful to edit `index.html`!
 
@@ -150,7 +150,7 @@ At this point, `server.js` and our client-side files (`index.html`, `app.js`, an
   │   ├── index.html
   ```
 
-1. We're just going to serve our index on the root route, `/`, so change the current GET `/` route from serving the string `'hello world'` to instead sending the `index.html` file, with `res.sendFile('views/index.html' , { root : __dirname});`. Curious about what this does? Try logging `__dirname` to your console.
+2. We're just going to serve our index on the root route, `/`, so change the current GET `/` route from serving the string `'hello world'` to instead sending the `index.html` file, with `res.sendFile('views/index.html' , { root : __dirname});`. Curious about what this does? Try logging `__dirname` to your console.
 
   > If you restart your server now and visit 'localhost:3000' in the browser, you'll notice the site now shows the contents of the html file instead of just the hello world message! Congratulations; you now have a server serving a page!
 
@@ -160,18 +160,18 @@ At this point, `server.js` and our client-side files (`index.html`, `app.js`, an
 
 1. Make a directory in your project called `public`; then create `public/scripts`, `public/styles` and `public/images` subdirectories.  Move `styles.css`, and `app.js`, into their public subdirectories.  These files are called static files. (You can delete the old directories they were in.)
 
-1. Set up the express app to serve the static files (actually, the whole public directory.)
+2. Set up the express app to serve the static files (actually, the whole public directory.)
 
   ```js
     // server.js
     app.use(express.static('public'));
   ```
 
-1. Get a `console.log("Sanity Check: JS is working!")` from your `app.js` to appear in your browser dev tools console.
+3. Get a `console.log("Sanity Check: JS is working!")` from your `app.js` to appear in your browser dev tools console.
 
-1. Get the css styles in `styles.css` working again on the index page.
+4. Get the css styles in `styles.css` working again on the index page.
 
-1. Everything should be working again now, and you should see your albums when you visit `localhost:3000`.  If not, fix it!
+5. Everything should be working again now, and you should see your albums when you visit `localhost:3000`.  If not, fix it!
 
 **Challenge**
 
@@ -188,7 +188,7 @@ We're making a weird app. Albums and taquerias.  Treat your senses.
       ];
     ```
 
-1. Add a route to your server side javascript that clients can use to get taqueria data.  The route's path should be `/api/taquerias`.  Instead of `res.send` (for simple strings) or `res.sendFile`, this route will use `res.json`.
+2. Add a route to your server side javascript that clients can use to get taqueria data.  The route's path should be `/api/taquerias`.  Instead of `res.send` (for simple strings) or `res.sendFile`, this route will use `res.json`.
 
     ```js
       app.get('/api/taquerias', function (req, res) {
@@ -196,9 +196,9 @@ We're making a weird app. Albums and taquerias.  Treat your senses.
       });
     ```
 
-1. Navigate to http://localhost:3000/api/taquerias (remember to restart your server first!) and check that the data is showing up.
+3. Navigate to http://localhost:3000/api/taquerias (remember to restart your server first!) and check that the data is showing up.
 
-1. In your `app.js` file, write a jQuery ajax request to get the taqueria data. When the response comes back, display all the taqueria names above the albums on your site's root page (localhost:3000/).  
+4. In your `app.js` file, write a jQuery ajax request to get the taqueria data. When the response comes back, display all the taqueria names above the albums on your site's root page (localhost:3000/).  
 
   <details>
     <summary> Want a reminder of the ajax call structure? Click here!</summary>
